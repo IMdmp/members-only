@@ -16,7 +16,8 @@ before_action :authenticate_user!, only: [:new, :create]
   end
 
   def index
-    @posts = current_user.posts
+    @posts = Post.all
+    @user = current_user
   end
 
   private
